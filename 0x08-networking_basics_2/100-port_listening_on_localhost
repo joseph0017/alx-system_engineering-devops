@@ -1,3 +1,7 @@
 #!/usr/bin/env bash
+<<<<<<< HEAD
 #creates a server listening on port 98
+=======
+# Creates a server listening on port 98
+>>>>>>> 64a8daedc21ed87c62cc4f05d0e8800b641f0c12
 nc -l 98
