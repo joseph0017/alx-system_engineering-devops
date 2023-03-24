@@ -1,4 +1,4 @@
-#creates a file in /tmp
+# creates a file in /tmp
 file { '/tmp/school':
 	ensure => 'present',
 	path => '/tmp/school',
@@ -7,3 +7,4 @@ file { '/tmp/school':
 	group => 'www-data',
 	content => 'I love Puppet'
 }
+
