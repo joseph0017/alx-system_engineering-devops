@@ -4,6 +4,6 @@
 sudo apt-get -y update
 sudo apt-get -y install nginx
 sudo service nginx start
-echo "Ceci n'est pas une page" | sudo tee /usr/share/nginx/html/error_404.html
+echo "Ceci n'est pas une page" | sudo tee /usr/share/nginx/html/page_not_found.html
 sudo sed -i "40i error_page /page_not_found.html;" /etc/nginx/sites-available/default
 sudo service nginx restart
