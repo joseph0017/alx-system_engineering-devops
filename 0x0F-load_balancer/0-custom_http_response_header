@@ -1,0 +1,27 @@
+#!/usr/bin/env bash
+# Installs Nginx
+# Configure Nginx so that its HTTP response contains a custom header
+
+sudo apt-get update
+sudo apt-get -y install nginx
+
+echo 'Hello World!' > /etc/nginx/html/index.html
+
+echo "server {
+        listen 80 default_server;
+        listen [::]:80 default_server;
+
+        #The header
+        add_header X-Served-By $HOSTNAME;
+
+        root /var/www/html;
+        index index.html index.htm index.nginx-debian.html;
+
+        server_name _;
+
+        location / {
+                try_files $uri $uri/ =404;
+        }
+}" > /etc/nginx/sites-available/default
+
+sudo service nginx restart
