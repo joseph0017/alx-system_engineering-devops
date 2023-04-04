@@ -1,20 +1,28 @@
 #!/usr/bin/env bash
 # Install and configure HAproxy on your lb-01 server.
 
-sudo apt update
-sudo apt install haproxy
+apt-get install --no-install-recommends software-properties-common
+add-apt-repository ppa:vbernat/haproxy-2.6
+apt-get install haproxy=2.6.\*
 
-echo "ENABLED=1" > /etc/default/haproxy
+echo "ENABLED=1" >> /etc/default/haproxy
 
 echo "
-frontend http-in
-    bind *:80
-    default_backend servers
+defaults
+    retries 3
+    timeout connect  5000
+    timeout client  10000
+    timeout server  10000
 
-backend servers
+listen load_balancer
+    bind *:80
+    mode http
+    option httpclose
+    option forwardfor
+
     balance roundrobin
-    server 143473-web-01 54.144.45.183:80 check
+    server 143473-web-01 54.237.35.82:80 check
     server 143473-web-02 18.209.224.87:80 check
-" > /etc/haproxy/haproxy.cfg
+" >> /etc/haproxy/haproxy.cfg
 
 sudo service haproxy start
