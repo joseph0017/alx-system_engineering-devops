@@ -1,0 +1,5 @@
+#!/usr/bin/env bash
+# runs nginx on port 80 and removes nginx pid
+rm /etc/nginx/sites-enabled/default
+ln -s /etc/nginx/sites-available/default /etc/nginx/sites-enabled/default
+sudo service nginx restart | rm /run/nginx.pid
