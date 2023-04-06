@@ -10,11 +10,10 @@ SUBDOMAINS=("www"  "lb-01" "web-01" "web-02")
 
 if [ "$#" == 1 ];
 then
-    for sub in ${SUBDOMAINS[@]}; do
-	get_domain_info "$1" $sub
-    done
+  for sub in ${SUBDOMAINS[@]}; do
+    get_domain_info "$1" $sub
+  done
 elif [ "$#" == 2 ]
 then
-    get_domain_info "$1" "$2"
+  get_domain_info "$1" "$2"
 fi
-
