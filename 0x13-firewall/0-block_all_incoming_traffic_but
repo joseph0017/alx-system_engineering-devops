@@ -1,4 +1,4 @@
-#!usr/bin/env bash
+#!/usr/bin/env bash
 # install the ufw firewall and setup a few firewall rules on web-01
 
 sudo apt install ufw
