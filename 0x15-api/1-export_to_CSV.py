@@ -7,18 +7,19 @@ from sys import argv
 
 if __name__ == '__main__':
     arg = argv[1]
-    users_url = f'https://jsonplaceholder.typicode.com/users/{arg}'
-    todos_url = f'https://jsonplaceholder.typicode.com/todos/'
+    users_url = 'https://jsonplaceholder.typicode.com/users/{}'.format(arg)
+    todos_url = 'https://jsonplaceholder.typicode.com/todos/'
     users = requests.get(users_url).json()
     username = users.get('username')
     payload = {"userId":  arg}
     employee_todo = requests.get(todos_url, params=payload).json()
 
-    filename = f'{arg}.csv'
+    filename = '{}.csv'.format(arg)
     with open(filename, 'w') as csvfile:
         for details in employee_todo:
             status = details.get('completed')
             user_id = details.get('userId')
             title = details.get('title')
-            fields = f'"{user_id}","{username}","{status}","{title}"\n'
+            fields = '"{}","{}","{}","{}"\n'
+            .format(user_id,username,status,title)
             csvfile.write(fields)
