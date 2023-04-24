@@ -23,9 +23,9 @@ if __name__ == '__main__':
             title = details.get('title')
             employee_id = details.get('userId')
             dictionary[user_id].append({
+                                        "username": username,
                                         "task": title,
-                                        "completed": status,
-                                        "username": username
+                                        "completed": status                                 
                                         })
     filename = 'todo_all_employees.json'
     with open(filename, 'w') as jsonfile:
