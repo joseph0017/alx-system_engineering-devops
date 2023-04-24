@@ -28,4 +28,4 @@ if __name__ == '__main__':
 
     for task in get_tasks_done:
         title = task.get('title')
-        print("\t {}".format(title))
+        print("{}".format(title))
