@@ -25,5 +25,5 @@ if __name__ == '__main__':
                                     "username": username
                                     })
     filename = f'{arg}.json'
-    with open (filename, 'w') as jsonfile:
-            json.dump(array, jsonfile)
+    with open(filename, 'w') as jsonfile:
+        json.dump(array, jsonfile)
