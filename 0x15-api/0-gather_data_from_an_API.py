@@ -1,5 +1,5 @@
 #!/usr/bin/python3
-"""A Python script that, using this REST API"""
+'''A Python script that, using this REST API'''
 import requests
 from sys import argv
 
