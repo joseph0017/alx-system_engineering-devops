@@ -1,7 +1,5 @@
 #!/usr/bin/python3
-'''
-A Python script that, using this REST API
-'''
+"""This module defines a class to manage file storage for hbnb clone"""
 import requests
 from sys import argv
 
