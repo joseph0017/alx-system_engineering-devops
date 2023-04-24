@@ -15,7 +15,7 @@ if __name__ == '__main__':
     employee_todo = requests.get(todos_url, params=payload).json()
 
     filename = f'{arg}.csv'
-    with open (filename, 'w') as csvfile:
+    with open(filename, 'w') as csvfile:
         for details in employee_todo:
             status = details.get('completed')
             user_id = details.get('userId')
