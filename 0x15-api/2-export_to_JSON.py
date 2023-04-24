@@ -9,8 +9,8 @@ from sys import argv
 
 if __name__ == '__main__':
     arg = argv[1]
-    users_url = f'https://jsonplaceholder.typicode.com/users/{arg}'
-    todos_url = f'https://jsonplaceholder.typicode.com/todos/'
+    users_url = 'https://jsonplaceholder.typicode.com/users/{}'.format(arg)
+    todos_url = 'https://jsonplaceholder.typicode.com/todos/'
     users = requests.get(users_url).json()
     username = users.get('username')
     payload = {"userId":  arg}
@@ -25,6 +25,6 @@ if __name__ == '__main__':
                                     "completed": status,
                                     "username": username
                                     })
-    filename = f'{arg}.json'
+    filename = '{}.json'.format(arg)
     with open(filename, 'w') as jsonfile:
         json.dump(array, jsonfile)
