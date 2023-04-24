@@ -5,6 +5,7 @@ extends Python script to export data in the JSON format
 import requests
 import json
 
+
 if __name__ == '__main__':
     users_url = f'https://jsonplaceholder.typicode.com/users/'
     todos_url = f'https://jsonplaceholder.typicode.com/todos/'
@@ -27,5 +28,5 @@ if __name__ == '__main__':
                                         "username": username
                                         })
     filename = 'todo_all_employees.json'
-    with open (filename, 'w') as jsonfile:
-            json.dump(dictionary, jsonfile)
+    with open(filename, 'w') as jsonfile:
+        json.dump(dictionary, jsonfile)

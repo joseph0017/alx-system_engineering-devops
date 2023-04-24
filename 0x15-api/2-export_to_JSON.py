@@ -6,6 +6,7 @@ import requests
 from sys import argv
 import json
 
+
 if __name__ == '__main__':
     arg = argv[1]
     users_url = f'https://jsonplaceholder.typicode.com/users/{arg}'
