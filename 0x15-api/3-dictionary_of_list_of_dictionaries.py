@@ -9,7 +9,7 @@ import json
 if __name__ == '__main__':
     users_url = f'https://jsonplaceholder.typicode.com/users/'
     todos_url = f'https://jsonplaceholder.typicode.com/todos/'
-    users = requests.get(users_url).json()  
+    users = requests.get(users_url).json()
     employee_todo = requests.get(todos_url).json()
 
     dictionary = {}
