@@ -20,6 +20,5 @@ if __name__ == '__main__':
             status = details.get('completed')
             user_id = details.get('userId')
             title = details.get('title')
-            fields = '"{}","{}","{}","{}"\n'
-            .format(user_id, username, status, title)
+            fields = '"{}","{}","{}","{}"\n'.format(user_id, username, status, title)
             csvfile.write(fields)
