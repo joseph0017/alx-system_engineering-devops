@@ -2,15 +2,6 @@
 """
 a Python script that, using this REST API, for a given
 employee ID, returns information about his/her Todo list progress
-a Python script that, using this REST API, for a given
-employee ID, returns information about his/her Todo list progress
-a Python script that, using this REST API, for a given
-employee ID, returns information about his/her Todo list progress
-a Python script that, using this REST API, for a given
-employee ID, returns information about his/her Todo list progress
-employee ID, returns information about his/her Todo list progress
-employee ID, returns information about his/her Todo list progress
-employee ID, returns information about his/her Todo list progress
 """
 import requests
 from sys import argv
