@@ -11,7 +11,7 @@ if __name__ == '__main__':
     url = 'https://jsonplaceholder.typicode.com/'
     # parameter for employee id
     param = argv[1]
-    employee_by_id = requests.get(url +'users/{}'.format(param)).json()
+    employee_by_id = requests.get(url + 'users/{}'.format(param)).json()
     name = employee_by_id.get('name')
     payload = {"userId":  param}
     employee_todo = requests.get(url + 'todos/', params=payload).json()
@@ -23,7 +23,7 @@ if __name__ == '__main__':
             get_tasks_done.append(task)
             done_task += 1
     num_tasks = len(employee_todo)
-    print("Employee {} is done with tasks({}/{})"\
+    print("Employee {} is done with tasks({}/{})"
           .format(name, done_task, num_tasks))
 
     for task in get_tasks_done:
