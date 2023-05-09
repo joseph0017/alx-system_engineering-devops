@@ -16,8 +16,8 @@ def top_ten(subreddit):
     payload = {"limit": "10", "g": "GLOBAL"}
     get_subreddit = requests.get(reddit_url, params=payload,
                                  headers=header, allow_redirects=False)
-    if get_subreddit.status_code != 200:
-        return None
+    if get_subreddit.status_code != 200 or not get_subreddit:
+        return print("None")
     result = get_subreddit.json().get('data').get('children')
     for content in result:
         print(content.get('data').get('title'))
