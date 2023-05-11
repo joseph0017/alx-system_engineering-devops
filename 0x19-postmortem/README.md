@@ -11,8 +11,7 @@ well because you can't access the website unless the 500 error has been resolved
 * 10/05/23 12:19AM (GMT+1) checked the configurations files for MySQL, Apache2, and indeed they are valid. Yet Apache2 fails.
 * 10/05/23 2:45AM (GMT+1)  checked the var/logs no logs for PHP found.
 * 10/05/23 3:00AM (GMT+1) checked the configuration files for PHP in /var/www/html/wp-settings.php
-found the error on line 137 
-* "on line: 137 require_once( ABSPATH . WPINC . '/class-wp-locale.phpp' );"
+found the error "on line: 137 require_once( ABSPATH . WPINC . '/class-wp-locale.phpp' );"
 
 # Root cause and resolution
 The error was a mispelling error on line 137 "require_once( ABSPATH . WPINC . '/class-wp-locale.phpp' );" it should be "require_once( ABSPATH . WPINC . '/class-wp-locale.php' )".
